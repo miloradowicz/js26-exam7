@@ -9,3 +9,8 @@ export interface Product {
   get type(): ProductType;
   get price(): number;
 }
+
+export interface OrderUnit {
+  get product(): Product;
+  get qty(): number;
+}
