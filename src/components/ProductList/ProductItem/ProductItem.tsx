@@ -1,15 +1,15 @@
 import { Product, ProductType } from '../../../types.d';
+import { currency } from '../../../data';
 import { FC, MouseEventHandler } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUtensils, faCoffee, IconDefinition } from '@fortawesome/free-solid-svg-icons';
 
 interface ProductItemProps {
   product: Product;
-  currency: string;
   onClick: MouseEventHandler;
 }
 
-const ProductItem: FC<ProductItemProps> = ({ product: { displayName, type, price }, currency, onClick }) => {
+const ProductItem: FC<ProductItemProps> = ({ product: { displayName, type, price }, onClick }) => {
   let icon: IconDefinition;
 
   switch (type) {

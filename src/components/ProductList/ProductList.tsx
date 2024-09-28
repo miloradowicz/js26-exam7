@@ -4,18 +4,22 @@ import ProductItem from './ProductItem/ProductItem';
 
 interface ProductListProps {
   products: Product[];
-  currency: string;
   onItemClick: (_: Product) => void;
 }
 
-const ProductList: FC<ProductListProps> = ({ products, currency, onItemClick }) => {
+const ProductList: FC<ProductListProps> = ({ products, onItemClick }) => {
   return (
-    <div className='row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-2'>
-      {products.map((x) => (
-        <div className='col'>
-          <ProductItem key={x.id} product={x} currency={currency} onClick={() => onItemClick(x)} />
+    <div className='col'>
+      <div className='container'>
+        <h3>Add items:</h3>
+        <div className='row row-cols-1 row-cols-lg-2 g-2'>
+          {products.map((x) => (
+            <div className='col'>
+              <ProductItem key={x.id} product={x} onClick={() => onItemClick(x)} />
+            </div>
+          ))}
         </div>
-      ))}
+      </div>
     </div>
   );
 };
