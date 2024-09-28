@@ -23,7 +23,7 @@ const ProductItem: FC<ProductItemProps> = ({ product: { displayName, type, price
   }
 
   return (
-    <button type='button' onClick={onClick} className='btn btn-light card'>
+    <button type='button' onClick={onClick} className='btn btn-light card w-100 h-100'>
       <div className='row align-items-center'>
         <div className='col-3'>
           <FontAwesomeIcon size='3x' icon={icon} />
