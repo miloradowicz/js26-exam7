@@ -7,6 +7,8 @@ export const products: Product[] = [
   { id: 3, displayName: 'Coffee', type: ProductType.Drink, price: 70 },
   { id: 4, displayName: 'Tea', type: ProductType.Drink, price: 50 },
   { id: 5, displayName: 'Cola', type: ProductType.Drink, price: 40 },
+  { id: 6, displayName: 'Pizza', type: ProductType.Food, price: 150 },
+  { id: 7, displayName: 'Good stuff', type: ProductType.Drink, price: 300 },
 ];
 
 export const currency: string = 'KGS';
