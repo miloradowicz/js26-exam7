@@ -14,9 +14,7 @@ const ProductList: FC<ProductListProps> = ({ products, onItemClick }) => {
         <h3 className='mb-3'>Add items:</h3>
         <div className='row row-cols-1 row-cols-lg-2 g-2'>
           {products.map((x) => (
-            <div className='col'>
-              <ProductItem key={x.id} product={x} onClick={() => onItemClick(x)} />
-            </div>
+            <ProductItem key={x.id} product={x} onClick={() => onItemClick(x)} />
           ))}
         </div>
       </div>

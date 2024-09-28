@@ -23,21 +23,23 @@ const ProductItem: FC<ProductItemProps> = ({ product: { displayName, type, price
   }
 
   return (
-    <button type='button' onClick={onClick} className='btn btn-light card w-100 h-100'>
-      <div className='row align-items-center'>
-        <div className='col-3'>
-          <FontAwesomeIcon size='3x' icon={icon} />
-        </div>
-        <div className='col-9'>
-          <div className='card-body'>
-            <h5 className='card-title'>{displayName}</h5>
-            <p className='card-text'>
-              Price: {price} {currency}
-            </p>
+    <div className='col'>
+      <button type='button' onClick={onClick} className='btn btn-light card w-100 h-100'>
+        <div className='row align-items-center'>
+          <div className='col-3'>
+            <FontAwesomeIcon size='3x' icon={icon} />
+          </div>
+          <div className='col-9'>
+            <div className='card-body'>
+              <h5 className='card-title'>{displayName}</h5>
+              <p className='card-text'>
+                Price: {price} {currency}
+              </p>
+            </div>
           </div>
         </div>
-      </div>
-    </button>
+      </button>
+    </div>
   );
 };
 
