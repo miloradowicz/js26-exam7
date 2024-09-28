@@ -11,7 +11,7 @@ interface OrderListProps {
 const OrderList: FC<OrderListProps> = ({ order, onItemDeleteClick }) => {
   return (
     <div className='col container'>
-      <h3>Order details:</h3>
+      <h3 className='mb-3'>Order details:</h3>
       {order.length === 0 ? (
         <div>
           <p>Order is empty!</p>

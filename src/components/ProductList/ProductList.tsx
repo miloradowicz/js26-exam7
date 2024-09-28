@@ -11,7 +11,7 @@ const ProductList: FC<ProductListProps> = ({ products, onItemClick }) => {
   return (
     <div className='col'>
       <div className='container'>
-        <h3>Add items:</h3>
+        <h3 className='mb-3'>Add items:</h3>
         <div className='row row-cols-1 row-cols-lg-2 g-2'>
           {products.map((x) => (
             <div className='col'>

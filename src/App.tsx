@@ -42,7 +42,7 @@ function App() {
 
   return (
     <div className='container'>
-      <h1>Super Duper Restaurant</h1>
+      <h1 className='mb-5'>Super Duper Restaurant</h1>
       <div className='row row-cols-1 row-cols-md-2 flex-column-reverse flex-md-row'>
         <OrderList order={order} onItemDeleteClick={deleteProduct}></OrderList>
         <ProductList products={products} onItemClick={addProduct} />

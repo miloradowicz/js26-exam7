@@ -12,7 +12,7 @@ const OrderTotal: FC<OrderTotalProps> = ({ total }) => {
         <div className='col-8 text-end'>
           <span>Total:</span>
         </div>
-        <div className='col-2'>
+        <div className='col-4'>
           <span>
             {total} {currency}
           </span>
