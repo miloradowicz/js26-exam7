@@ -1,5 +1,7 @@
-import { FC, MouseEventHandler } from 'react';
 import { Product, ProductType } from '../../../types.d';
+import { FC, MouseEventHandler } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUtensils, faCoffee, IconDefinition } from '@fortawesome/free-solid-svg-icons';
 
 interface ProductItemProps {
   product: Product;
@@ -8,19 +10,21 @@ interface ProductItemProps {
 }
 
 const ProductItem: FC<ProductItemProps> = ({ product: { displayName, type, price }, currency, onClick }) => {
-  const classList: string[] = ['fa'];
+  let icon: IconDefinition;
+
   switch (type) {
     case ProductType.Drink:
-      classList.push('fa-mug-saucer');
+      icon = faCoffee;
       break;
 
     case ProductType.Food:
-      classList.push('fa-utensils');
+      icon = faUtensils;
       break;
   }
 
   return (
-    <button type='button' className={classList.join(' ')} onClick={onClick}>
+    <button type='button' onClick={onClick}>
+      <FontAwesomeIcon icon={icon} style={{}} />
       <span>{displayName}</span>
       <span>
         Price: {price} {currency}
