@@ -5,15 +5,40 @@ import OrderList from './components/OrderList/OrderList';
 import ProductList from './components/ProductList/ProductList';
 import './App.css';
 
-const order: OrderUnit[] = [
-  { product: products[1], qty: 2 },
-  { product: products[3], qty: 4 },
-  { product: products[0], qty: 1 },
-];
-
 function App() {
-  const addProduct = () => {};
-  const deleteProduct = () => {};
+  const [order, setOrder] = useState<OrderUnit[]>([]);
+
+  const addProduct = (product: Product) => {
+    setOrder((order) => {
+      const _order = [...order];
+
+      const i = _order.findIndex((x) => x.product.id === product.id);
+      if (i < 0) {
+        _order.push({ product, qty: 1 });
+      } else {
+        _order.splice(i, 1, { ..._order[i], qty: _order[i].qty + 1 });
+      }
+
+      return _order;
+    });
+  };
+
+  const deleteProduct = (product: Product) => {
+    setOrder((order) => {
+      const _order = [...order];
+
+      const i = _order.findIndex((x) => x.product.id === product.id);
+      if (i >= 0) {
+        if (_order[i].qty > 1) {
+          _order.splice(i, 1, { ..._order[i], qty: _order[i].qty - 1 });
+        } else {
+          _order.splice(i, 1);
+        }
+      }
+
+      return _order;
+    });
+  };
 
   return (
     <div className='container'>
